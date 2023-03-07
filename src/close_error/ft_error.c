@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_sort.c                                    :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 18:49:24 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 12:07:37 by pfalasch         ###   ########.fr       */
+/*   Created: 2023/03/07 11:10:45 by pfalasch          #+#    #+#             */
+/*   Updated: 2023/03/07 11:56:15 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack *ft_init(char **av, int ac, t_stack *stack, int k)
+void ft_error_input(t_stack *stack)
 {
-	t_check check;
-	
-	check.ac = ac;
-	check.i = 0;
-	check.j = 0;
-	check.trigger = 1;
-	if (ac == 2)
-	{
-		/* controlliamo che gli argomenti siano ok, e ce li contiamo pure! */
-		stack = ft_check_stack(av[1], stack, check);
-		/* riempiamo lo stack a con gli argomenti! */
-		ft_fill_stack(av[1], stack, check);
-	}
+	ft_printf("error\n");
+	free(stack);
+	exit(0);
+}
+
+void	ft_error(t_stack	*stack)
+{
+	ft_printf("Error\n");
+	free(stack->stack_a);
+	free(stack->stack_b);
+	free(stack);
+	exit(0);
 }

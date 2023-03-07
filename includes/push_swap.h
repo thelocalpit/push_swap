@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/06 16:55:04 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:25:48 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libs/libft/include/libft.h"
+# include "../libs/ft_printf/include/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -44,14 +45,16 @@ typedef struct s_stack
 {
 	int		*stack_a;
 	int		*stack_b;
-	int		size_a;
-	int		size_b;
-	int		max_b;
+	int		current_a;
+	int		current_b;
 	int		max_a;
-	int		min_b;
-	int		min_a;
-	int		nbr_moves;
-}				t_stack;
+	int		max_b;
+	int		*moves;
+	int		tmp_moves;
+	int		index_maxa;
+	int		index_maxb;
+	int		index_minb;	
+} 					t_stack;
 
 /* This struct is needed for checking the correct imput */
 typedef struct s_check {
