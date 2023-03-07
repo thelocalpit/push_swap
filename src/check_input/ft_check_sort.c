@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:49:24 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 12:07:37 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:22:41 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,10 @@ t_stack *ft_init(char **av, int ac, t_stack *stack, int k)
 		/* riempiamo lo stack a con gli argomenti! */
 		ft_fill_stack(av[1], stack, check);
 	}
+	/* qui controlliamo se non ci sono le virgolette, tutti gli argomenti. */
+	else 
+	{
+		stack = ft_check_av(av, stack, check);
+		ft_fill_stack_multi_stack(av, stack, check);
+		}
 }
