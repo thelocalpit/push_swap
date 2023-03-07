@@ -6,7 +6,7 @@
 #    By: pfalasch <pfalasch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 17:32:17 by pfalasch          #+#    #+#              #
-#    Updated: 2023/02/22 18:20:01 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/03/06 16:23:57 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,14 @@ WHITE = \033[0;97m
 NAME = push_swap
 INCLUDE = includes
 CC = gcc
+SRC = src/
+OBJ = obj/
 FLAGS = -Wall -Wextra -Werror
 LIBFT := libs/libft/
 LIBRARY := libs/libft/libft.a libs/libft/ft_printf/libftprintf.a
-SRC = src/
-OBJ = obj/
 #manca printf
 
-OBJF		=	.cache_exists
+#OBJF		=	.cache_exists
 
 SRC =	push_swap.c \
 		src/check_input/check_input.c \
@@ -48,7 +48,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 		make -C $(LIBFT)
-		make -C $(FT_PRINTF)
+#		make -C $(FT_PRINTF)
 	$(CC) $(FLAGS) $(SRC) $(LIBRARY) -o $(NAME)
 	@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
 
@@ -63,9 +63,5 @@ fclean: clean
 		make fclean -C $(LIBFT)
 		make fclean -C $(FTPRINTF)
 	rm -f $(NAME)
-
-fclean all
-	@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEF_COLOR)"
-
 
 re: fclean all clean
