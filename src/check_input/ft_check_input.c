@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:18:25 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 14:27:24 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:17:50 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ t_stack *ft_check_stack(char *s, t_stack *stack, t_check c)
 			ft_error_input(stack);
 		if(s[c.i] == ' ')
 			c.trigger = 1;
-		/* in questa condizione andiamo ad aumentare il current_a, ovvero ci teniamo in questo modo 
-		anche il numero di argomenti passati */
+		/* in questa condizione andiamo ad aumentare il current_a, ovvero ci teniamo conto del numero di argomenti che sono stati passati */
 		if (c.trigger == 1 && ((s[c.i] >= '0' && s[c.i] <= '9') || s[c.i] == '-'))
 		{
 			stack->current_a++;
@@ -37,6 +36,11 @@ t_stack *ft_check_stack(char *s, t_stack *stack, t_check c)
 	}
 	return (stack);
 }
+/*  in questa funzione dobbiamo andare ad inserire gli argomenti, ovvero i numeri per poi cominciare a fare l'	ordinamento 
+	nb: 1. dobbiamo allocare la memoria degli stack. utilizziamo il current_a che ci siamo ricavati mentre controllavamo che 
+		non ci fossero errori
+		2. utiliziamo il trigger del checker per definire in qualche condizione dobbiamo finire
+		*/
 void ft_fill_stack(char *s, t_stack *stack, t_check c)
 {
 	int count;
@@ -64,6 +68,7 @@ void ft_fill_stack(char *s, t_stack *stack, t_check c)
 	}
 }
 
+/* stessa cosa delle funzioni sopra solo che dobbiamo gestire piu argomenti */
 t_stack	*ft_check_av(char **av, t_stack *stack, t_check c)
 {
 	c.i = 1;
@@ -90,6 +95,7 @@ t_stack	*ft_check_av(char **av, t_stack *stack, t_check c)
 	}
 	return (stack);
 }
+/* stessa cosa di sopra solo viene gestita con piú argomenti  */
 void ft_fill_stack_2(char **av, t_stack *stack, t_check c) 
 {
 	c.i = 1;
@@ -117,3 +123,5 @@ void ft_fill_stack_2(char **av, t_stack *stack, t_check c)
 		c.i++;
 	}
 }
+
+/* funzione che controlla in entrambi i casi sia con un solo argomento sia con piû argomenti che non ci siano doppioni */
