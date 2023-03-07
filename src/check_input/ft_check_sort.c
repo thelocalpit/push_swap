@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:49:24 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 14:22:41 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:26:06 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,24 @@ t_stack *ft_init(char **av, int ac, t_stack *stack, int k)
 	{
 		stack = ft_check_av(av, stack, check);
 		ft_fill_stack_multi_stack(av, stack, check);
-		}
+	}
+	if (stack->current_a == 1)
+		ft_close(stack);
+	ft_check_init_sort(stack);
+	ft_check_doubles(stack);
+	return (stack);
+}
+
+void	ft_check_init_sort(t_stack *stack)
+{
+	int i;
+
+	i = 0;
+	while (i < stack->current_a -1)
+	{
+		if (stack->stack_a[i] > stack->stack_a[i + 1])
+			return ;
+		i++;
+	}
+	ft_close_init(stack);
 }

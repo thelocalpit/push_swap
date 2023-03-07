@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:18:25 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 15:17:50 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:35:06 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,4 +124,31 @@ void ft_fill_stack_2(char **av, t_stack *stack, t_check c)
 	}
 }
 
-/* funzione che controlla in entrambi i casi sia con un solo argomento sia con piû argomenti che non ci siano doppioni */
+/* funzione che controlla in entrambi i casi sia con un solo argomento 
+sia con piû argomenti che non ci siano doppioni 
+NB:	1. creiamo un ciclo while fintanto che non abbiamo comparato
+	ciascun argomento per controllare che nessuno sia uguale a un altro
+	2. la condizione i == j è necessaria perchè ogni volta che si rinizia un
+	ciclo avremo una sovrapposizione*/
+
+void ft_check_doubles(t_stack *stack)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 1;
+	while (i < stack->current_a - 1)
+	{
+		while (stack->stack_a[i] != stack->current_a[j] && j < stack->current_a)
+		{
+			j++;
+			if (i == j)
+				j++;
+		}
+		if (stack->stack_a[i] == stack->stack_a[j] && j < stack->current_a)
+			ft_error(stack);
+		j = 0;
+		i++;
+	}
+}
