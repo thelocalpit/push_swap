@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 15:04:39 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/08 21:04:12 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libs/libft/include/libft.h"
-# include "../libs/ft_printf/include/ft_printf.h"
+# include "../libs/ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
