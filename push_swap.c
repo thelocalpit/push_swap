@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: pitpiter <pitpiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:11 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 10:41:03 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:58:50 by pitpiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	main(int ac, char **av)
 	if (ac == 1)
 		exit(0);
 	stack = ft_init(av, ac, stack, 1);
-	
+	len += ft_sorting(stack);
 	/* se non ci sono argomenti */
-	/* se ci sono argomenti fra "	" devo riempire lo stack 
+	/* se ci sono argomenti fra "	" devo riempire lo stack
 	funzione ft_check_stack	*/
 	else
 	{

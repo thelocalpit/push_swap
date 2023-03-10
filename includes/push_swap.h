@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pitpiter <pitpiter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/08 21:04:12 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:46:44 by pitpiter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,10 @@ typedef struct s_stack
 	int		*stack_b;
 	int		current_a;
 	int		current_b;
-	int		max_a;
 	int		min_b;
+	int		max_b;
+	int		min_a;
+	int		max_a;
 	int		*moves;
 	int		tmp_moves;
 	int		index_maxa;
