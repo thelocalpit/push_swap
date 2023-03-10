@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pfalasch <pfalasch@student.42.fr>          +#+  +:+       +#+         #
+#    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 17:32:17 by pfalasch          #+#    #+#              #
-#    Updated: 2023/03/06 16:23:57 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/03/10 17:40:02 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,4 +64,4 @@ fclean: clean
 		make fclean -C $(FTPRINTF)
 	rm -f $(NAME)
 
-re: fclean all clean
+re: clean fclean all clean

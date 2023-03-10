@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sorting_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pitpiter <pitpiter@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:02:59 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/10 12:58:50 by pitpiter         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:47:54 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 void    ft_sorting_a(t_stack *stack)
 {
     ft_find_maxmin_a(stack);
-    /* se abbiamo solo due elementi e sono invertiti */
     if (stack->index_mina == 0)
     {
         if (stack->index_maxa == 1)
@@ -26,6 +25,44 @@ void    ft_sorting_a(t_stack *stack)
             sa(stack);
         }
     }
-    else if (stack)
-        
+    else if (stack->index_mina == 1)
+    {
+        if (stack->max_a == 0)
+            ra(stack);
+        else
+            sa(stack);
+    }
+    else
+    {
+        if (stack->index_maxa == 0)
+            sa(stack);
+        rra(stack);
+    }
 }
+
+/* questa funzione mi serve per definire il max e il min dello stack di A in 
+    modo da ordinare nel caso siano solo 3 elementi 
+    prenderô un int i che utilizzerô per scorrere. prenderô il primo elemento
+    e lo confronterô con i successivi. al momento che trovo uno piû piccolo
+    o uno piu grande lo sostituisco e diventa il nuovo min o il nuovo max */  
+void ft_find_maxmin_a(t_stack *stack)
+{
+    int i;
+
+    i = 0;
+    stack->index_mina = i;
+    while (++i < stack->current_a)
+    {
+        if (stack->stack_a[i] < stack->stack_a[stack->index_mina])
+            (stack->index_mina = i);
+    }
+    i = 0;
+    stack->index_maxa = i;
+    while (++i < stack->current_a)
+    {
+        if (stack->stack_a[i] > stack->stack_a[stack->index_maxa])
+            stack->index_maxa = i;
+    }
+}
+
+
