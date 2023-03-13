@@ -6,7 +6,7 @@
 #    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 17:32:17 by pfalasch          #+#    #+#              #
-#    Updated: 2023/03/10 17:40:02 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,21 @@ LIBRARY := libs/libft/libft.a libs/libft/ft_printf/libftprintf.a
 
 SRC =	push_swap.c \
 		src/check_input/check_input.c \
+		src/check_input/check_sort.c \
 		src/close_error/ft_close.c \
+		src/close_error/ft_error.c \
 		src/move/push.c \
 		src/move/rotate.c \
 		src/move/swap.c \
 		src/move/reverse.c \
+		src/sorting/ft_check_maxmin.c \
+		src/sorting/ft_check_pusha.c \
+		src/sorting/ft_check_to_b.c \
+		src/sorting/ft_count_move_to_b.c \
+		src/sorting/ft_pushb.c \
+		src/sorting/ft_sorting_a.c \
+		src/sorting/ft_sorting.c \
+		
 
 OBJ = $(SRC:.c=.o)
 

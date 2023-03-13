@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <falaschip@gmail.com>             +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:11 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 11:36:11 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,14 @@ int	main(int ac, char **av)
     while(++i < j - 3)
     {
         topush = ft_count_moves(stack);
+        ft_realsort(stack, topush);
     }
+    ft_find_maxmin_a(stack);
+    ft_sorting_a(stack);
+    i = stack->current_b;
+    j = -1;
+    while (++j < i)
+        
 
     /* se non ci sono argomenti */
 	/* se ci sono argomenti fra "	" devo riempire lo stack

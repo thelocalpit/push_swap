@@ -6,12 +6,24 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:49:24 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 19:26:06 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+/* ft_init è la funzione che serve per capire in che situazione siamo:
+    se abbiamo un argomento solo facciamo un check di quello che sta dentro
+    con funzione ft_check_stack e successivamente se tutto ok riempiamo con 
+    ft_fill_stack
+    altrimenti se abbiamo più argomenti allora facciamo un check con 
+    ft_check_stack w poi riempiamo se tutto ok co ft_fill_stack_multi_stack
+    se invece abbiamo un solo elemento chiudiamo perchè già ordinato
+    poi controlliamo con ft_check_init_sort se gli elementi sono igà ordinati
+    in questo caso facciamo un ft_close_init per svuoltare solo lo stack_A senza
+    dover ritornare niente
+    alla fine controlliamo che nello stack in cui abbiamo inserito gli elementi
+    non ci siano duplicati */
 t_stack *ft_init(char **av, int ac, t_stack *stack, int k)
 {
 	t_check check;

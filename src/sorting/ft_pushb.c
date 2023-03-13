@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:02:56 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 19:37:58 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,19 @@ void ft_timetopush_secondhalf_b(t_stack *stack, t_topush topush, int i)
     }
 }
 
-
+void ft_timetopush_mix_1(t_stack *stack, t_topush topush, int i)
+{
+    while (++i < topush.index_a)
+        ra(stack);
+    i = -1;
+    while (++i < stack->current_a - topush.index_a)
+        rrb(stack);
+}
+void ft_timetopush_mix_2(t_stack *stack, t_topush topush, int i)
+{
+    while (++i < topush.index_b)
+        rb(stack);
+    i = -1;
+    while (++i < stack->current_b - topush.index_b)
+        rra(stack);
+}

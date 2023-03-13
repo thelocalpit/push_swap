@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pitpiter <pitpiter@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/09 15:46:44 by pitpiter         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:06:01 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,15 +98,59 @@ typedef struct s_check {
 
 
 /* swap function */
+int			sa(t_stack *stack, int p);
+int			sb(t_stack *stack, int p);
+int			ss(t_stack *stack, int p);
 
 /* push function */
+int			pa(t_stack *stack, int p);
+int			pb(t_stack *stack, int p);
 
 /* rotate funciton */
+int			ra(t_stack *stack, int p);
+int			rb(t_stack *stack, int p);
+int			rr(t_stack *stack, int p);
+
+/* reverse rotate function */
+int			rra(t_stack *stack, int p);
+int			rrb(t_stack *stack, int p);
+int			rrr(t_stack *stack, int p);
 
 /* check and fill stack a */
+t_stack     *ft_init(char **av, int ac, t_stack *stack, int k);
+t_stack     *ft_check_stack(char *s, t_stack *stack, t_check c);
+void        ft_fill_stack(char *s, t_stack *stack, t_check c);
+t_stack     *ft_check_av(char **av, t_stack *stack, t_check c);
+void		ft_fill_stack_2(char **av, t_stack *stack, t_check c);
+void		ft_check_doubles(t_stack *stack);
+void		ft_check_init_sort(t_stack *stack);
 
-/* sorting function */
+/* sorting function to push into stack B */
+int			ft_sorting(t_stack *stack);
+int			ft_first(t_stack *stack);
+int			ft_find_index_s_b(t_stack *stack, int top_b);
+t_topush	ft_find_max_moves(t_stack *stack, int i, int tmp_b,
+						   t_topush topush);
+int			ft_next_topb(t_stack *stack, int i);
+t_topush	ft_count_moves(t_stack *stack);
+void		ft_realsort(t_stack *stack, t_topush topush);
+t_topush	ft_new_cheapest(int i, int tmp_b, t_topush topush);
+t_topush	ft_index_under(t_stack *stack, int i, int tmp_b, t_topush topush);
+t_topush	ft_index_over(t_stack *stack, int i, int tmp_b, t_topush topush);
+void		ft_timetopush_under_b(t_stack *stack, t_topush topush, int i);
+void		ft_timetopush_over_b(t_stack *stack, t_topush topush, int i);
+void		ft_timetopush_mix_1(t_stack *stack, t_topush topush, int i);
+void		ft_timetopush_mix_2(t_stack *stack, t_topush topush, int i);
 
+/* sorting funciton to push into stack A */
+void		ft_sorting_a(t_stack *stack);
 /* checking stacks */
+void		ft_check_maxmin(t_stack *stack);
+void		ft_find_maxmin_a(t_stack *stack);
 
+/* error/close functions */
+void		ft_error_prev(t_stack *stack);
+void		ft_error(t_stack *stack);
+void		ft_close(t_stack *stack);
+void		ft_close_init(t_stack *stack);
 #endif

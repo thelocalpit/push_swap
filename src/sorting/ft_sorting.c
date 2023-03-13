@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sorting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pitpiter <pitpiter@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:02:52 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/13 10:28:26 by pitpiter         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,25 @@ int	ft_sorting(t_stack *stack)
 	delle leggi di norminette (altirmenti funzioni troppo lunghe).
 	In questa funzione cominciamo a portare i primi 2 elementi di A in B. 
 	poichè la mossa più economica si traduce nel portare subito i due numeri che
-	stanno on top */
+	stanno on top 
+    forse è meglio spostarlo in un altro file*/
 
 int	ft_first_push_to_b(t_stack *stack)
 {
 	stack->current_b = 0;
 	stack->min_b = 0;
 	stack->max_b = 0;
-
+    if (stack->stack_a[0] > stack->stack_a[1])
+    {
+        stack->min_b = stack->stack_a[1];
+        stack->max_b = stack->stack_a[0];
+    }
+    else
+    {
+        stack->min_b = stack->stack_a[0];
+        stack->max_b = stack->stack_a[1];
+    }
+    pb(stack);
+    pb(stack);
+    return (2);
 }
