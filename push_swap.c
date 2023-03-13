@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:11 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 23:14:19 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/14 00:19:31 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int ac, char **av)
     while(++i < j - 3)
     {
         topush = ft_count_moves(stack);
+        printf("questo è qualcosa da stampare: %i", topush.count_moves);
         ft_realsort(stack, topush);
     }
     ft_find_maxmin_a(stack);
