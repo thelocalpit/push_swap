@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:49:24 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:14:05 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@
     dover ritornare niente
     alla fine controlliamo che nello stack in cui abbiamo inserito gli elementi
     non ci siano duplicati */
-t_stack *ft_init(char **av, int ac, t_stack *stack, int k)
+t_stack *ft_init(char **av, int ac)
 {
 	t_check check;
-	
+	t_stack *stack;
+
+	stack = malloc(sizeof(t_stack));
 	check.ac = ac;
 	check.i = 0;
 	check.j = 0;

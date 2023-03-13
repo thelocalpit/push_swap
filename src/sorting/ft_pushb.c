@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:02:56 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:47:27 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void ft_realsort(t_stack *stack, t_topush topush)
     int half_current_b;
     int i;
 
+    i = -1;
     if ((stack->current_a % 2) != 0)
         half_current_a = stack->current_a / 2 + 1;
     else
@@ -55,36 +56,40 @@ void ft_timetopush_firsthalf_b(t_stack *stack, t_topush topush, int i)
         while (++i < topush.index_b)
             rr(stack);
         i = -1;
-        while (++i < (topush.index_a - topush.index_b)
+        while (++i < (topush.index_a - topush.index_b))
             ra(stack);
+    }
     else
+    {
         while (++i < topush.index_a)
             rr(stack);
         i = -1;
-        while (++i < (topush.index_b - topush.index_a)
+        while (++i < (topush.index_b - topush.index_a))
             rb(stack);
     }
 }
+
+
 void ft_timetopush_secondhalf_b(t_stack *stack, t_topush topush, int i)
 {
-    if ((stack->current_a - topush.index_a 
+    if ((stack->current_a - topush.index_a) 
             >= (stack->current_b - topush.index_b))
     {
         while (++i < (stack->current_b - topush.index_b))
             rrr(stack);
         i = -1;
         while (++i < ((stack->current_a - topush.index_a)
-                 - (stack->current_b - topush.index_b)
+                 - (stack->current_b - topush.index_b)))
             rra (stack);
     }
-    else if ((stack->current_a - topush.index_a 
+    else if ((stack->current_a - topush.index_a) 
             < (stack->current_b - topush.index_b))
     {
         while (++i < (stack->current_a - topush.index_a))
             rrr(stack);
         i = -1;
         while (++i < ((stack->current_b - topush.index_b)
-                 - (stack->current_a - topush.index_a)
+                 - (stack->current_a - topush.index_a)))
             rrb (stack);
     }
 }

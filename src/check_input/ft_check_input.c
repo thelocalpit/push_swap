@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:18:25 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/07 18:35:06 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:10:55 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack *ft_check_stack(char *s, t_stack *stack, t_check c)
 	accettiamo il - e lo spazio. i è una variabile qualunque che mi serve per scorrere gli argomenti allínterno di av[1] */
 	while(s[c.i])
 	{
-		if(!((s[c.i] >= '0' && s[c.i] <= '9'|| s[c.i] == '-' || s[c.i] == '32')))
+		if(!((s[c.i] >= '0' && s[c.i] <= '9') || (s[c.i] == '-' || s[c.i] == '0')))
 			ft_error_input(stack);
 		if(s[c.i] == ' ')
 			c.trigger = 1;
@@ -52,8 +52,8 @@ void ft_fill_stack(char *s, t_stack *stack, t_check c)
 	stack->stack_b = (int *)malloc(stack->current_a * sizeof(int));
 	while (s[c.i])
 	{
-		if (s[c.i] == ' ')
-			c.trigger == 1;
+		if (s[c.i] == 32)
+			c.trigger = 1;
 		if (c.trigger == 1 && ((s[c.i] >= '0' && s[c.i] <= '9') || s[c.i] == '-'))
 		{
 			if (ft_atoi(s + c.i) >= -2147483648 && ft_atoi(s + c.i) <= 2147483647)
@@ -80,7 +80,7 @@ t_stack	*ft_check_av(char **av, t_stack *stack, t_check c)
 		while (c.j < (int)ft_strlen(av[c.i]))
 		{
 			if (!((av[c.i][c.j] >= '0' && av[c.i][c.j] <= '9') || av[c.i][c.j] == '-'))
-					ft_error_prev(stack);
+					ft_error_input(stack);
 			if (c.trigger == 0)
 					c.j++;
 			else
@@ -96,7 +96,7 @@ t_stack	*ft_check_av(char **av, t_stack *stack, t_check c)
 	return (stack);
 }
 /* stessa cosa di sopra solo viene gestita con piú argomenti  */
-void ft_fill_stack_2(char **av, t_stack *stack, t_check c) 
+void ft_fill_stack_multi_stack(char **av, t_stack *stack, t_check c)
 {
 	c.i = 1;
 	stack->stack_a = (int *)malloc(stack->current_a * sizeof(int));
@@ -104,7 +104,7 @@ void ft_fill_stack_2(char **av, t_stack *stack, t_check c)
 	while (c.i < c.ac)
 	{
 		c.j = 0;
-		while (c.j < ft_strlen(av[c.i]))
+		while (c.j < (int)ft_strlen(av[c.i]))
 		{
 			if (c.trigger == 0)
 				c.j++;
@@ -140,7 +140,7 @@ void ft_check_doubles(t_stack *stack)
 	j = 1;
 	while (i < stack->current_a - 1)
 	{
-		while (stack->stack_a[i] != stack->current_a[j] && j < stack->current_a)
+		while (stack->stack_a[i] != stack->stack_a[j] && j < stack->current_a)
 		{
 			j++;
 			if (i == j)

@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:53:58 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:30:16 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 t_topush	ft_count_moves(t_stack	*stack)
 {
-	int index_b;
 	int top_b;
 	int tmp_index_a;
 	int tmp_index_b;
@@ -132,8 +131,8 @@ t_topush ft_find_max_moves(t_stack *stack, int tmp_index_a, int tmp_index_b, t_t
         /* nel caso in cui entrambi sono nella parte alta degli stacks */
     if (tmp_index_b >= half_current_b && tmp_index_a >= half_current_a)
         topush = ft_index_over(stack, tmp_index_a, tmp_index_b, topush);
-    else if (tmp_index_b < half_current_b && i < half_current_a)
-        topush = ft_index_under(stack, tmp_index_a, tmp_index_b, topush);
+    else if (tmp_index_b < half_current_b && tmp_index_a < half_current_a)
+        topush = ft_index_under(tmp_index_a, tmp_index_b, topush);
     /* quin invece ci occupiamo di gestire i casi in cui i due elementi da 
         tenere in consideraizone non sono dalla stessa parte. le mosse in questo
         caso saranno la somma di A e B singolarmente. questo perchè non ci sono
@@ -151,3 +150,4 @@ t_topush ft_find_max_moves(t_stack *stack, int tmp_index_a, int tmp_index_b, t_t
     if (topush.count_moves > topush.tmp_moves || tmp_index_a == 0)
         topush = ft_new_cheapest(tmp_index_b, tmp_index_b, topush);
     return (topush);
+}

@@ -6,7 +6,7 @@
 #    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 17:32:17 by pfalasch          #+#    #+#              #
-#    Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/03/13 22:21:51 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,15 +30,15 @@ CC = gcc
 SRC = src/
 OBJ = obj/
 FLAGS = -Wall -Wextra -Werror
-LIBFT := libs/libft/
-LIBRARY := libs/libft/libft.a libs/libft/ft_printf/libftprintf.a
-#manca printf
+LIBFT = libs/libft/
+FTPRINTF = libs/ft_printf/
+LIBRARY = libs/libft/libft.a libs/ft_printf/libftprintf.a
 
 #OBJF		=	.cache_exists
 
 SRC =	push_swap.c \
-		src/check_input/check_input.c \
-		src/check_input/check_sort.c \
+		src/check_input/ft_check_input.c \
+		src/check_input/ft_check_sort.c \
 		src/close_error/ft_close.c \
 		src/close_error/ft_error.c \
 		src/move/push.c \
@@ -56,9 +56,9 @@ SRC =	push_swap.c \
 
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+all:
 		make -C $(LIBFT)
-#		make -C $(FT_PRINTF)
+		make -C $(FTPRINTF)
 	$(CC) $(FLAGS) $(SRC) $(LIBRARY) -o $(NAME)
 	@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
 
@@ -66,7 +66,7 @@ clean:
 
 		rm -f $(OBJ)
 		make clean -C $(LIBFT)
-		make clean -C $(FT_PRINTF)
+		make clean -C $(FTPRINTF)
 		@echo "$(BLUE)push_swap object files cleaned!$(DEF_COLOR)"
 	
 fclean: clean

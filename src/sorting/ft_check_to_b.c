@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:03:06 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:24:31 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_topush ft_index_over(t_stack *stack, int tmp_index_a, int tmp_index_b, t_topus
     return (topush);
 }
 /* uguale a sopra ma al contrario */
-t_topush ft_index_under(t_stack *stack, int tmp_index_a, int tmp_index_b, t_topush topush)
+t_topush ft_index_under(int tmp_index_a, int tmp_index_b, t_topush topush)
 {
     if (tmp_index_b >= tmp_index_a)
         topush.tmp_moves = tmp_index_b;
@@ -40,3 +40,4 @@ t_topush ft_new_cheapest(int tmp_index_a, int tmp_index_b, t_topush topush)
     topush.index_b = tmp_index_b;
     topush.count_moves = topush.tmp_moves;
     return (topush);
+}

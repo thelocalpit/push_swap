@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 22:06:01 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:48:48 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libs/libft/include/libft.h"
-# include "../libs/ft_printf/ft_printf.h"
+# include "../libs/ft_printf/include/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -98,36 +98,36 @@ typedef struct s_check {
 
 
 /* swap function */
-int			sa(t_stack *stack, int p);
-int			sb(t_stack *stack, int p);
-int			ss(t_stack *stack, int p);
+int			sa(t_stack *stack);
+int			sb(t_stack *stack);
+int			ss(t_stack *stack);
 
 /* push function */
-int			pa(t_stack *stack, int p);
-int			pb(t_stack *stack, int p);
+int			pa(t_stack *stack);
+int			pb(t_stack *stack);
 
 /* rotate funciton */
-int			ra(t_stack *stack, int p);
-int			rb(t_stack *stack, int p);
-int			rr(t_stack *stack, int p);
+int			ra(t_stack *stack);
+int			rb(t_stack *stack);
+int			rr(t_stack *stack);
 
 /* reverse rotate function */
-int			rra(t_stack *stack, int p);
-int			rrb(t_stack *stack, int p);
-int			rrr(t_stack *stack, int p);
+int			rra(t_stack *stack);
+int			rrb(t_stack *stack);
+int			rrr(t_stack *stack);
 
 /* check and fill stack a */
-t_stack     *ft_init(char **av, int ac, t_stack *stack, int k);
+t_stack     *ft_init(char **av, int ac);
 t_stack     *ft_check_stack(char *s, t_stack *stack, t_check c);
 void        ft_fill_stack(char *s, t_stack *stack, t_check c);
 t_stack     *ft_check_av(char **av, t_stack *stack, t_check c);
-void		ft_fill_stack_2(char **av, t_stack *stack, t_check c);
+void		ft_fill_stack_multi_stack(char **av, t_stack *stack, t_check c);
 void		ft_check_doubles(t_stack *stack);
 void		ft_check_init_sort(t_stack *stack);
 
 /* sorting function to push into stack B */
 int			ft_sorting(t_stack *stack);
-int			ft_first(t_stack *stack);
+int			ft_first_push_to_b(t_stack *stack);
 int			ft_find_index_s_b(t_stack *stack, int top_b);
 t_topush	ft_find_max_moves(t_stack *stack, int i, int tmp_b,
 						   t_topush topush);
@@ -135,10 +135,10 @@ int			ft_next_topb(t_stack *stack, int i);
 t_topush	ft_count_moves(t_stack *stack);
 void		ft_realsort(t_stack *stack, t_topush topush);
 t_topush	ft_new_cheapest(int i, int tmp_b, t_topush topush);
-t_topush	ft_index_under(t_stack *stack, int i, int tmp_b, t_topush topush);
+t_topush	ft_index_under(int i, int tmp_b, t_topush topush);
 t_topush	ft_index_over(t_stack *stack, int i, int tmp_b, t_topush topush);
-void		ft_timetopush_under_b(t_stack *stack, t_topush topush, int i);
-void		ft_timetopush_over_b(t_stack *stack, t_topush topush, int i);
+void		ft_timetopush_firsthalf_b(t_stack *stack, t_topush topush, int i);
+void		ft_timetopush_secondhalf_b(t_stack *stack, t_topush topush, int i);
 void		ft_timetopush_mix_1(t_stack *stack, t_topush topush, int i);
 void		ft_timetopush_mix_2(t_stack *stack, t_topush topush, int i);
 
@@ -149,7 +149,7 @@ void		ft_check_maxmin(t_stack *stack);
 void		ft_find_maxmin_a(t_stack *stack);
 
 /* error/close functions */
-void		ft_error_prev(t_stack *stack);
+void		ft_error_input(t_stack *stack);
 void		ft_error(t_stack *stack);
 void		ft_close(t_stack *stack);
 void		ft_close_init(t_stack *stack);

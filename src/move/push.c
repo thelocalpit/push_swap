@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pitpiter <pitpiter@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:55:43 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/09 15:46:44 by pitpiter         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:15:59 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	pb(t_stack *stack)
 	return (push_b);
 }
 
-int pa(t_stack *stack, int p)
+int pa(t_stack *stack)
 {
 	int i;
 
