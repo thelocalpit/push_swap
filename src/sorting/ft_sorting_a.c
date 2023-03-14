@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:02:59 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/10 17:47:54 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:57:03 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,12 @@ void ft_find_maxmin_a(t_stack *stack)
     }
 }
 
-
+/* questa funzione è necessaria per portare gli elementi nello stack_A
+    per fare questo dobbiamo girare finchè non siamo in ordine.
+    per fare questo porto on top sempre
+    ricorda; non hai ne i piu grandi ne i piu piccoli nello stack A
+    quindi devi fare in modo di struttura a modo la cosa */
+void ft_pushing_to_a(t_stack *stack)
+{
+    
+}

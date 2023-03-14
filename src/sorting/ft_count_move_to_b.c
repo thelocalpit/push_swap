@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:53:58 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 23:30:16 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:50:55 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_topush	ft_count_moves(t_stack	*stack)
         topush = ft_find_max_moves(stack, tmp_index_a, tmp_index_b, topush);
         tmp_index_a++;
     }
+    /* printf("questo è qualcosa da stampare: %i", topush.count_moves); */
     return (topush);
 }
 /* questa funzione è necessaria per decretare quale elemento dovrà stare on top

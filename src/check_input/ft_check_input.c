@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:18:25 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 23:10:55 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:15:08 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ t_stack *ft_check_stack(char *s, t_stack *stack, t_check c)
 	accettiamo il - e lo spazio. i è una variabile qualunque che mi serve per scorrere gli argomenti allínterno di av[1] */
 	while(s[c.i])
 	{
-		if(!((s[c.i] >= '0' && s[c.i] <= '9') || (s[c.i] == '-' || s[c.i] == '0')))
+		if(!((s[c.i] >= '0' && s[c.i] <= '9') || (s[c.i] == '-' || s[c.i] == 32)))
+		{
+			printf("	entro qui??");
 			ft_error_input(stack);
+		}
 		if(s[c.i] == ' ')
 			c.trigger = 1;
 		/* in questa condizione andiamo ad aumentare il current_a, ovvero ci teniamo conto del numero di argomenti che sono stati passati */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_close.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pfalasch <pfalasch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:37:54 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/08 20:57:07 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:08:58 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_close(t_stack *stack)
 {
+	printf("sono qui_01");
 	free(stack->stack_a);
 	free(stack->stack_b);
 	free(stack);
@@ -22,6 +23,7 @@ void	ft_close(t_stack *stack)
 
 void ft_close_init(t_stack *stack)
 {
+	printf("sono qui_02");
 	free(stack);
 	exit(0);
 }
