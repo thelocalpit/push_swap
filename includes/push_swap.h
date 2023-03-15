@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 23:56:28 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:01:18 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,14 @@ void		ft_timetopush_mix_2(t_stack *stack, t_topush topush, int i);
 
 /* sorting funciton to push into stack A */
 void		ft_sorting_a(t_stack *stack);
+int         ft_find_next_top_a(t_stack *stack);
+void        ft_pushing_to_a(t_stack *stack);
+void        final_sorting(t_stack *stack);
+int         ft_index_half_stack(int current);
+void        ft_sta_maj_stb_1(t_stack *stack, int half_current_a);
+void        ft_sta_maj_stb_2(t_stack *stack, int half_current_a, int index_top_a, int i);
+void        ft_stb_maj_sta_1(t_stack *stack, int half_currrent_a);
+void        ft_stb_maj_sta_2(t_stack *stack, int half_current_a, int index_top_a, int i);
 /* checking stacks */
 void		ft_check_maxmin(t_stack *stack);
 void		ft_find_maxmin_a(t_stack *stack);

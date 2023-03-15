@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:11 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/14 16:43:03 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:36:54 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int	main(int ac, char **av)
     j = -1;
     while (++j < i)
 		ft_pushing_to_a(stack);
-/* 	final_sorting(stack); */
+	final_sorting(stack);
 	ft_close(stack);
 }
