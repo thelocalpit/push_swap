@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pitpiter <pitpiter@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:47:20 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/09 15:46:44 by pitpiter         ###   ########.fr       */
+/*   Updated: 2023/03/15 18:09:58 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int ra(t_stack *stack)
         i++;
     }
     stack->stack_a[i] = tmp;
-    // ft_check_maxmin(stack);
+    ft_check_maxmin(stack);
     ft_printf("ra\n");
     return (rotate_a);
 }
@@ -50,7 +50,7 @@ int rb(t_stack *stack)
         i++;
     }
     stack->stack_b[i] = tmp;
-    // ft_check_maxmin(stack);
+    ft_check_maxmin(stack);
     ft_printf("rb\n");
     return (rotate_b);
 }
@@ -76,7 +76,7 @@ int rr(t_stack *stack)
         i++;
     }
     stack->stack_b[i] = tmp;
-    // ft_check_maxmin(stack);
+    ft_check_maxmin(stack);
     ft_printf("rr\n");
     return (rotate_ab);
 }

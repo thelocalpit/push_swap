@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:02:52 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/13 22:06:13 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:32:14 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,23 @@
 
 #include "../../includes/push_swap.h"
 
-int	ft_sorting(t_stack *stack)
+void	ft_sorting(t_stack *stack)
 {
-	int	len;
+	// int	len;
+/*     int i = -1; */
 
-	if (stack->current_a == 3)
+    if (stack->current_a == 3)
 	{
 		ft_sorting_a(stack);
-		ft_close(stack);
+    /*     i = -1;
+        while (++i < stack->current_a)
+            ft_printf("%i\n", stack->stack_a[i]); */
+        ft_close(stack);
 	}
-	len = 0;
-	len += ft_first_push_to_b(stack);
-    return	(len);
+	// len = 0;
+	/* len +=  */ft_first_push_to_b(stack);
+    return;
+    /* return	(len); */
 }
 
 /* questa funzione è creata principalmente per semplificare la correzzione delle
@@ -38,7 +43,7 @@ int	ft_sorting(t_stack *stack)
 	stanno on top 
     forse è meglio spostarlo in un altro file*/
 
-int	ft_first_push_to_b(t_stack *stack)
+void	ft_first_push_to_b(t_stack *stack)
 {
 	stack->current_b = 0;
 	stack->min_b = 0;
@@ -55,5 +60,5 @@ int	ft_first_push_to_b(t_stack *stack)
     }
     pb(stack);
     pb(stack);
-    return (2);
+/*     return (2); */
 }

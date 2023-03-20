@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pitpiter <pitpiter@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:47:17 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/09 15:46:44 by pitpiter         ###   ########.fr       */
+/*   Updated: 2023/03/15 18:09:46 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int rra(t_stack *stack)
         i--;
     }
     stack->stack_a[0] = tmp;
-    // ft_check_maxmin(stack);
+    ft_check_maxmin(stack);
     ft_printf("rra\n");
     return (reverse_a);
 }
@@ -50,7 +50,7 @@ int rra(t_stack *stack)
             i--;
         }
         stack->stack_b[0] = tmp;
-        // ft_check_maxmin(stack);
+        ft_check_maxmin(stack);
         ft_printf("rrb\n");
         return (reverse_b);
     }
@@ -76,7 +76,7 @@ int rra(t_stack *stack)
             i--;
         }
         stack->stack_b[0] = tmp;
-        // ft_check_maxmin(stack);
+        ft_check_maxmin(stack);
         ft_printf("rrr\n");
         return (reverse_ab);
     }

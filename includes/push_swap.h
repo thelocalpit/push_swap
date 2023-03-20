@@ -6,14 +6,14 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/15 15:01:18 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:46:15 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libs/libft/include/libft.h"
+// # include "../libs/libft/include/libft.h"
 # include "../libs/ft_printf/include/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -124,10 +124,14 @@ t_stack     *ft_check_av(char **av, t_stack *stack, t_check c);
 void		ft_fill_stack_multi_stack(char **av, t_stack *stack, t_check c);
 void		ft_check_doubles(t_stack *stack);
 void		ft_check_init_sort(t_stack *stack);
+size_t      ft_strlen(const char *str);
+int         ft_atoi(const char *str, t_stack *stack);
 
 /* sorting function to push into stack B */
-int			ft_sorting(t_stack *stack);
-int			ft_first_push_to_b(t_stack *stack);
+// int			ft_sorting(t_stack *stack);
+void        ft_sorting(t_stack *stack);
+// int			ft_first_push_to_b(t_stack *stack);
+void	    ft_first_push_to_b(t_stack *stack);
 int			ft_find_index_s_b(t_stack *stack, int top_b);
 t_topush	ft_find_max_moves(t_stack *stack, int i, int tmp_b,
 						   t_topush topush);

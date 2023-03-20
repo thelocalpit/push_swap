@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:02:56 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 23:47:27 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/17 15:21:09 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void ft_realsort(t_stack *stack, t_topush topush)
         ft_timetopush_secondhalf_b(stack, topush, i);
     else if (topush.index_a < half_current_a && topush.index_b >= half_current_b)
         ft_timetopush_mix_1(stack, topush, i);
-    else if (topush.index_a < half_current_a && topush.index_b >= half_current_b)
+    else if (topush.index_a >= half_current_a && topush.index_b < half_current_b)
         ft_timetopush_mix_2(stack, topush, i);
     pb(stack);
 }
@@ -99,7 +99,7 @@ void ft_timetopush_mix_1(t_stack *stack, t_topush topush, int i)
     while (++i < topush.index_a)
         ra(stack);
     i = -1;
-    while (++i < stack->current_a - topush.index_a)
+    while (++i < stack->current_b - topush.index_b)
         rrb(stack);
 }
 void ft_timetopush_mix_2(t_stack *stack, t_topush topush, int i)
@@ -107,6 +107,6 @@ void ft_timetopush_mix_2(t_stack *stack, t_topush topush, int i)
     while (++i < topush.index_b)
         rb(stack);
     i = -1;
-    while (++i < stack->current_b - topush.index_b)
+    while (++i < stack->current_a - topush.index_a)
         rra(stack);
 }

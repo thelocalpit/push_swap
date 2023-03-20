@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:00:45 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/15 14:57:02 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:38:05 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void    ft_sta_maj_stb_1(t_stack *stack, int half_current_a)
     subito maggiore rispetto a quello che devo pushare. una volta trovato il suoi
     index, andremo a capire dove sta, se nella prima o seconda metà rispettto al
     current_a    */
-void    ft_sta_maj_std_2(t_stack *stack, int half_current_a, int index_top_a, int i)
+void    ft_sta_maj_stb_2(t_stack *stack, int half_current_a, int index_top_a, int i)
 {
     index_top_a = ft_find_next_top_a(stack);
     if (index_top_a >= half_current_a)

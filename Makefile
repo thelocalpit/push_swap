@@ -6,7 +6,7 @@
 #    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 17:32:17 by pfalasch          #+#    #+#              #
-#    Updated: 2023/03/14 16:07:31 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/03/19 12:45:27 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,10 @@ CC = gcc
 SRC = src/
 OBJ = obj/
 FLAGS = -Wall -Wextra -Werror
-LIBFT = libs/libft/
+#LIBFT = libs/libft/
 FTPRINTF = libs/ft_printf/
-LIBRARY = libs/libft/libft.a libs/ft_printf/libftprintf.a
+LIBRARY = libs/ft_printf/libftprintf.a
+#libs/libft/libft.a
 
 #OBJF		=	.cache_exists
 
@@ -52,12 +53,15 @@ SRC =	push_swap.c \
 		src/sorting/ft_pushb.c \
 		src/sorting/ft_sorting_a.c \
 		src/sorting/ft_sorting.c \
+		src/check_input/ft_utils.c \
+		
+		
 		
 
 OBJ = $(SRC:.c=.o)
 
 all:
-		make -C $(LIBFT)
+#		make -C $(LIBFT)
 		make -C $(FTPRINTF)
 	$(CC) $(FLAGS) $(SRC) $(LIBRARY) -o $(NAME)
 	@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
@@ -65,12 +69,12 @@ all:
 clean:
 
 		rm -f $(OBJ)
-		make clean -C $(LIBFT)
+#		make clean -C $(LIBFT)
 		make clean -C $(FTPRINTF)
 		@echo "$(BLUE)push_swap object files cleaned!$(DEF_COLOR)"
 	
 fclean: clean
-		make fclean -C $(LIBFT)
+#		make fclean -C $(LIBFT)
 		make fclean -C $(FTPRINTF)
 	rm -f $(NAME)
 

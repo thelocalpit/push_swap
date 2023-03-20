@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 14:02:21 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/01/18 18:22:17 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:27:39 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ int	ft_atoi(const char *str)
 	int	i;
 	int	s;
 	int	res;
+    int prev_result;
 
-	i = 0;
-	s = 1;
+    i = 0;
+    s = 1;
 	res = 0;
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
 		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
@@ -37,9 +38,12 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = (res * 10) + (str[i] - '0');
-		i++;
-	}
+        prev_result = result;
+        res = (res * 10) + (str[i] - '0');
+        if (prev_result > result)
+            return (1);
+        i++;
+    }
 	return (res * s);
 }
 /* 

@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:18:25 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/14 16:15:08 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:43:57 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ t_stack *ft_check_stack(char *s, t_stack *stack, t_check c)
 	while(s[c.i])
 	{
 		if(!((s[c.i] >= '0' && s[c.i] <= '9') || (s[c.i] == '-' || s[c.i] == 32)))
-		{
-			printf("	entro qui??");
 			ft_error_input(stack);
-		}
-		if(s[c.i] == ' ')
+		if(s[c.i] == 32)
 			c.trigger = 1;
 		/* in questa condizione andiamo ad aumentare il current_a, ovvero ci teniamo conto del numero di argomenti che sono stati passati */
 		if (c.trigger == 1 && ((s[c.i] >= '0' && s[c.i] <= '9') || s[c.i] == '-'))
@@ -59,13 +56,20 @@ void ft_fill_stack(char *s, t_stack *stack, t_check c)
 			c.trigger = 1;
 		if (c.trigger == 1 && ((s[c.i] >= '0' && s[c.i] <= '9') || s[c.i] == '-'))
 		{
-			if (ft_atoi(s + c.i) >= -2147483648 && ft_atoi(s + c.i) <= 2147483647)
-			{
-				stack->stack_a[count] = ft_atoi(s + c.i);
-				count++;
-				}
-				else
-					ft_error(stack);
+/*             if (ft_atoi(s + c.i, stack) == -2147483648)
+                ft_error(stack);
+            if (ft_atoi(s + c.i, stack) == 2147483647)
+                ft_error(stack); */
+            stack->stack_a[count] = ft_atoi(s + c.i, stack);
+            count++;
+            c.trigger = 0;
+            /* 	if (ft_atoi(s + c.i) >= -2147483648 && ft_atoi(s + c.i) <= 2147483647)
+                {
+                    stack->stack_a[count] = ft_atoi(s + c.i);
+                    count++;
+                    }
+                    else
+                        ft_error(stack); */
 		}
 		c.i++;
 	}
@@ -74,8 +78,9 @@ void ft_fill_stack(char *s, t_stack *stack, t_check c)
 /* stessa cosa delle funzioni sopra solo che dobbiamo gestire piu argomenti */
 t_stack	*ft_check_av(char **av, t_stack *stack, t_check c)
 {
-	c.i = 1;
-	stack = malloc(sizeof(stack));
+    // printf("sono qui\n");
+    c.i = 1;
+    // stack = malloc(sizeof(stack));
 	stack->current_a = 0;
 	while (c.i < c.ac)
 	{
@@ -92,7 +97,7 @@ t_stack	*ft_check_av(char **av, t_stack *stack, t_check c)
 					stack->current_a++;
 					c.j++;
 			}
-		}
+        }
 		c.trigger = 1;
 		c.i++;
 	}
@@ -112,15 +117,24 @@ void ft_fill_stack_multi_stack(char **av, t_stack *stack, t_check c)
 			if (c.trigger == 0)
 				c.j++;
 			else
-			{
-				if (ft_atoi(av[c.i]) >= -2147483648 && ft_atoi(av[c.i]) <= 2147483647)
+            {
+                c.trigger = 0;
+/*                 if (ft_atoi(av[c.i], stack) == -2147483648)
+                    ft_error(stack);
+                if (ft_atoi(av[c.i], stack) == 2147483647)
+                    ft_error(stack); */
+                stack->stack_a[c.i - 1] = ft_atoi(av[c.i], stack);
+                c.j++;
+            }
+            /* {
+				if (ft_atoi(av[c.i]) > -2147483648 || ft_atoi(av[c.i]) < 2147483647)
 				{
 					stack->stack_a[c.i - 1] = ft_atoi(av[c.i]);
 					c.j++;
 				}
 				else
 					ft_error(stack);
-			}
+			} */
 		}
 		c.trigger = 1;
 		c.i++;

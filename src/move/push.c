@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:55:43 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/13 23:15:59 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/17 15:23:34 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	pb(t_stack *stack)
 {
 	int i;
 
-	i = stack->current_a;
+	i = stack->current_b;
 	while (i > 0)
 	{
 		stack->stack_b[i] = stack->stack_b[i - 1];
@@ -39,7 +39,7 @@ int	pb(t_stack *stack)
 	stack->current_b++;
 	stack->stack_b[0] = stack->stack_a[0];
 	i = 1;
-	while (i < stack->current_b)
+	while (i < stack->current_a)
 	{
 		stack->stack_a[i - 1] = stack->stack_a[i];
 		i++;
