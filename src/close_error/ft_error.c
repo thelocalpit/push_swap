@@ -6,13 +6,13 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:10:45 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 01:22:59 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:27:00 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void ft_error_input(t_stack *stack)
+void	ft_error_input(t_stack *stack)
 {
 	ft_printf("error\n");
 	free(stack);

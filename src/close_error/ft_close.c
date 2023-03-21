@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:37:54 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 01:22:55 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:26:54 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_close(t_stack *stack)
 	exit(0);
 }
 
-void ft_close_init(t_stack *stack)
+void	ft_close_init(t_stack *stack)
 {
 	free(stack);
 	exit(0);
