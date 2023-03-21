@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:02:56 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 13:33:20 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:19:19 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	ft_timetopush_firsthalf_b(t_stack *stack, t_topush topush, int i)
 			rb(stack, 1);
 	}
 }
-
 
 void	ft_timetopush_secondhalf_b(t_stack *stack, t_topush topush, int i)
 {

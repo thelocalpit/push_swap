@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:53:58 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 13:30:24 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:19:03 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_topush	ft_count_moves(t_stack	*stack)
 	return (topush);
 }
 
-int	ft_next_topb (t_stack *stack, int tmp_index_a)
+int	ft_next_topb(t_stack *stack, int tmp_index_a)
 {
 	int	j;
 	int	tmp;

@@ -6,15 +6,10 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:11 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 13:35:00 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:07:26 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-/*	len = numero di argomenti passati
-**	t_stack = struttura dove tengo variabili legate ai due stack A-B
-**	to_push = conta mosse
-**	 */
 #include "includes/push_swap.h"
 
 int	main(int ac, char **av)

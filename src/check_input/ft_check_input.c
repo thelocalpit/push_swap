@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:18:25 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 12:20:52 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:13:36 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	ft_fill_stack(char *s, t_stack *stack, t_check c)
 					&& s[c.i] <= '9') || s[c.i] == '-'))
 		{
 			stack->stack_a[count] = ft_atoi(s + c.i, stack);
-            count++;
-            c.trigger = 0;
+			count++;
+			c.trigger = 0;
 		}
 		c.i++;
 	}
@@ -58,14 +58,14 @@ void	ft_fill_stack(char *s, t_stack *stack, t_check c)
 
 t_stack	*ft_check_av(char **av, t_stack *stack, t_check c)
 {
-    c.i = 1;
+	c.i = 1;
 	stack->current_a = 0;
 	while (c.i < c.ac)
 	{
 		c.j = 0;
 		while (c.j < (int)ft_strlen(av[c.i]))
 		{
-			if (!((av[c.i][c.j] >= '0' && av[c.i][c.j] <= '9') 
+			if (!((av[c.i][c.j] >= '0' && av[c.i][c.j] <= '9')
 					|| av[c.i][c.j] == '-'))
 				ft_error_input(stack);
 			if (c.trigger == 0)

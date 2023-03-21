@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:02:59 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/21 13:33:52 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:19:46 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ int	ft_find_next_top_a(t_stack *stack)
 	}
 	return (0);
 }
-
 
 void	final_sorting(t_stack *stack)
 {
