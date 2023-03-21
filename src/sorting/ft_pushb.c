@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:02:56 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 01:52:49 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 03:01:55 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void ft_realsort(t_stack *stack, t_topush topush)
         ft_timetopush_mix_1(stack, topush, i);
     else if (topush.index_a >= half_current_a && topush.index_b < half_current_b)
         ft_timetopush_mix_2(stack, topush, i);
-    pb(stack);
+    pb(stack, 1);
 }
 
 void ft_timetopush_firsthalf_b(t_stack *stack, t_topush topush, int i)
@@ -44,23 +44,23 @@ void ft_timetopush_firsthalf_b(t_stack *stack, t_topush topush, int i)
     if (topush.index_a == topush.index_b)
     {
         while (++i < topush.index_a)
-            rr(stack);
+            rr(stack, 1);
     }
     else if (topush.index_a > topush.index_b)
     {
         while (++i < topush.index_b)
-            rr(stack);
+            rr(stack, 1);
         i = -1;
         while (++i < (topush.index_a - topush.index_b))
-            ra(stack);
+            ra(stack, 1);
     }
     else
     {
         while (++i < topush.index_a)
-            rr(stack);
+            rr(stack, 1);
         i = -1;
         while (++i < (topush.index_b - topush.index_a))
-            rb(stack);
+            rb(stack, 1);
     }
 }
 
@@ -71,38 +71,38 @@ void ft_timetopush_secondhalf_b(t_stack *stack, t_topush topush, int i)
             >= (stack->current_b - topush.index_b))
     {
         while (++i < (stack->current_b - topush.index_b))
-            rrr(stack);
+            rrr(stack, 1);
         i = -1;
         while (++i < ((stack->current_a - topush.index_a)
                  - (stack->current_b - topush.index_b)))
-            rra (stack);
+            rra (stack, 1);
     }
     else if ((stack->current_a - topush.index_a) 
             < (stack->current_b - topush.index_b))
     {
         while (++i < (stack->current_a - topush.index_a))
-            rrr(stack);
+            rrr(stack, 1);
         i = -1;
         while (++i < ((stack->current_b - topush.index_b)
                  - (stack->current_a - topush.index_a)))
-            rrb (stack);
+            rrb (stack, 1);
     }
 }
 
 void ft_timetopush_mix_1(t_stack *stack, t_topush topush, int i)
 {
     while (++i < topush.index_a)
-        ra(stack);
+        ra(stack, 1);
     i = -1;
     while (++i < stack->current_b - topush.index_b)
-        rrb(stack);
+        rrb(stack, 1);
 }
 
 void ft_timetopush_mix_2(t_stack *stack, t_topush topush, int i)
 {
     while (++i < topush.index_b)
-        rb(stack);
+        rb(stack, 1);
     i = -1;
     while (++i < stack->current_a - topush.index_a)
-        rra(stack);
+        rra(stack, 1);
 }

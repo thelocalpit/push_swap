@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:11 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 01:26:18 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 02:50:32 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 		exit(0);
-	stack = ft_init(av, ac);
+	stack = ft_init(av, ac, 1);
 	ft_sorting(stack);
     j = stack->current_a;
     i = -1;

@@ -6,13 +6,13 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:47:20 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 01:23:18 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 03:00:48 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int ra(t_stack *stack)
+int ra(t_stack *stack, int k)
 {
     int i;
     int tmp;
@@ -26,11 +26,12 @@ int ra(t_stack *stack)
     }
     stack->stack_a[i] = tmp;
     ft_check_maxmin(stack);
-    ft_printf("ra\n");
+    if (k == 1)
+        ft_printf("ra\n");
     return (rotate_a);
 }
 
-int rb(t_stack *stack)
+int rb(t_stack *stack, int k)
 {
     int i;
     int tmp;
@@ -44,11 +45,12 @@ int rb(t_stack *stack)
     }
     stack->stack_b[i] = tmp;
     ft_check_maxmin(stack);
-    ft_printf("rb\n");
+    if (k == 1)
+        ft_printf("rb\n");
     return (rotate_b);
 }
 
-int rr(t_stack *stack)
+int rr(t_stack *stack, int k)
 {
     int i;
     int tmp;
@@ -70,6 +72,7 @@ int rr(t_stack *stack)
     }
     stack->stack_b[i] = tmp;
     ft_check_maxmin(stack);
-    ft_printf("rr\n");
+    if (k == 1)
+        ft_printf("rr\n");
     return (rotate_ab);
 }

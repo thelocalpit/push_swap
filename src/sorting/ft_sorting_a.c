@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:02:59 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/21 01:26:00 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 02:57:15 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@ void    ft_sorting_a(t_stack *stack)
     {
         if (stack->index_maxa == 1)
         {
-            rra(stack);
-            sa(stack);
+            rra(stack, 1);
+            sa(stack, 1);
         }
     }
     else if (stack->index_mina == 1)
     {
         if (stack->index_maxa == 0)
-            ra(stack);
+            ra(stack, 1);
         else
-            sa(stack);
+            sa(stack, 1);
     }
     else
     {
         if (stack->index_maxa == 0)
-            sa(stack);
-        rra(stack);
+            sa(stack, 1);
+        rra(stack, 1);
     }
 }
 
@@ -82,7 +82,7 @@ void ft_pushing_to_a(t_stack *stack)
         else
             ft_stb_maj_sta_2(stack, half_current_a, index_top_a, i);
     }
-    pa(stack);
+    pa(stack, 1);
 }
 
 int ft_find_next_top_a (t_stack *stack)
@@ -115,11 +115,11 @@ void    final_sorting(t_stack *stack)
     if (stack->index_mina >= half_current_a)
     {
         while (++i < (stack->current_a - stack->index_mina))
-            rra(stack);
+            rra(stack, 1);
     }
     else
     {
         while (++i < stack->index_mina)
-            ra(stack);
+            ra(stack, 1);
     }
 }

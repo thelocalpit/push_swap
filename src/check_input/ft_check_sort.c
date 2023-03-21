@@ -6,13 +6,13 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:49:24 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 01:22:42 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 02:47:31 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack *ft_init(char **av, int ac)
+t_stack *ft_init(char **av, int ac, int k)
 {
 	t_check check;
 	t_stack *stack;
@@ -35,7 +35,8 @@ t_stack *ft_init(char **av, int ac)
 	if (stack->current_a == 1)
 		ft_close(stack);
 	ft_check_doubles(stack);
-	ft_check_init_sort(stack);
+    if (k == 1)
+        ft_check_init_sort(stack);
 	return (stack);
 }
 

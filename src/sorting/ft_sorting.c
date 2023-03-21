@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:02:52 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/21 01:26:07 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 02:57:27 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_first_push_to_b(t_stack *stack)
         stack->min_b = stack->stack_a[0];
         stack->max_b = stack->stack_a[1];
     }
-    pb(stack);
-    pb(stack);
+    pb(stack, 1);
+    pb(stack, 1);
 /*     return (2); */
 }
