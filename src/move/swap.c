@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:47:22 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 12:38:31 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:59:33 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	sa(t_stack *stack, int k)
 {
-	int	tmp;	
+	int	tmp;
+
 	tmp = stack->stack_a[0];
 	stack->stack_a[0] = stack->stack_a[1];
 	stack->stack_a[1] = tmp;

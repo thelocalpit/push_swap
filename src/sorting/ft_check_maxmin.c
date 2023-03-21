@@ -6,15 +6,15 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 21:46:02 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/21 11:55:10 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:01:23 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void ft_check_maxmin(t_stack *stack)
+void	ft_check_maxmin(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < stack->current_b)

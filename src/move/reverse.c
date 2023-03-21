@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:47:17 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 12:30:18 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:59:18 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	rra(t_stack *stack, int k)
 	return (reverse_a);
 }
 
-int	rrb(t_stack * stack, int k)
+int	rrb(t_stack *stack, int k)
 {
 	int	i;
 	int	tmp;

@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:02:59 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/21 11:55:47 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:33:52 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_find_maxmin_a(t_stack *stack)
 		if (stack->stack_a[i] < stack->stack_a[stack->index_mina])
 			stack->index_mina = i;
 	}
-    i = 0;
+	i = 0;
 	stack->index_maxa = i;
 	while (++i < stack->current_a)
 	{
@@ -101,25 +101,25 @@ int	ft_find_next_top_a(t_stack *stack)
 }
 
 
-void    final_sorting(t_stack *stack)
+void	final_sorting(t_stack *stack)
 {
-    int half_current_a;
-    int i;
+	int	half_current_a;
+	int	i;
 
-    i = -1;
-    if ((stack->current_a % 2) != 0)
-        half_current_a = stack->current_a / 2 + 1;
-    else
-        half_current_a = stack->current_a / 2;
-    ft_find_maxmin_a(stack);
-    if (stack->index_mina >= half_current_a)
-    {
-        while (++i < (stack->current_a - stack->index_mina))
-            rra(stack, 1);
-    }
-    else
-    {
-        while (++i < stack->index_mina)
-            ra(stack, 1);
-    }
+	i = -1;
+	if ((stack->current_a % 2) != 0)
+		half_current_a = stack->current_a / 2 + 1;
+	else
+		half_current_a = stack->current_a / 2;
+	ft_find_maxmin_a(stack);
+	if (stack->index_mina >= half_current_a)
+	{
+		while (++i < (stack->current_a - stack->index_mina))
+			rra(stack, 1);
+	}
+	else
+	{
+		while (++i < stack->index_mina)
+			ra(stack, 1);
+	}
 }
