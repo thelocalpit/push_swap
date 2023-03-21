@@ -6,7 +6,7 @@
 #    By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 17:32:17 by pfalasch          #+#    #+#              #
-#    Updated: 2023/03/19 12:45:27 by pfalasch         ###   ########.fr        #
+#    Updated: 2023/03/20 12:07:36 by pfalasch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ WHITE = \033[0;97m
 
 
 NAME = push_swap
+NAME_B = checker
 INCLUDE = includes
 CC = gcc
 SRC = src/
@@ -55,27 +56,31 @@ SRC =	push_swap.c \
 		src/sorting/ft_sorting.c \
 		src/check_input/ft_utils.c \
 		
-		
+BONUS = include/bonus/checker.c \
+		libs/get_next_line/get_next_line.c \
+		libs/get_next_line/get_next_line_utils.c \
 		
 
 OBJ = $(SRC:.c=.o)
+BOBJ = $(BONUS.c=.o)
 
 all:
-#		make -C $(LIBFT)
 		make -C $(FTPRINTF)
 	$(CC) $(FLAGS) $(SRC) $(LIBRARY) -o $(NAME)
 	@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
 
+bonus : all
+	$(CC) $(FLAGS) $(BONUS) $(SRC_2) $(LIBRARY) -o $(NAME_B)
+	
 clean:
-
 		rm -f $(OBJ)
-#		make clean -C $(LIBFT)
+		rm -f $(BOBJ)
 		make clean -C $(FTPRINTF)
 		@echo "$(BLUE)push_swap object files cleaned!$(DEF_COLOR)"
 	
 fclean: clean
-#		make fclean -C $(LIBFT)
 		make fclean -C $(FTPRINTF)
 	rm -f $(NAME)
+	rm -f $(NAME_B)
 
 re: clean fclean all clean

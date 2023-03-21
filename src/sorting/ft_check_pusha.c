@@ -6,18 +6,19 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 23:00:45 by pitpiter          #+#    #+#             */
-/*   Updated: 2023/03/15 15:38:05 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 01:23:53 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int ft_index_half_stack(int current)
+int ft_index_half_stack(int current_a)
 {
-    if ((current % 2) != 0)
-        return (current / 2 + 1);
+    if ((current_a % 2) != 0)
+        current_a = current_a / 2 + 1;
     else
-        return (current / 2);
+        current_a = current_a / 2;
+    return (current_a);
 }
 
 void    ft_sta_maj_stb_1(t_stack *stack, int half_current_a)
@@ -40,11 +41,6 @@ void    ft_sta_maj_stb_1(t_stack *stack, int half_current_a)
     }
 }
 
-/* questa funzione gestisce la situaizone in cui lo stack_b[0] < stack_a[0]
-    ma non è un nuovo minimo. ciò significa che devo portare on top il numero
-    subito maggiore rispetto a quello che devo pushare. una volta trovato il suoi
-    index, andremo a capire dove sta, se nella prima o seconda metà rispettto al
-    current_a    */
 void    ft_sta_maj_stb_2(t_stack *stack, int half_current_a, int index_top_a, int i)
 {
     index_top_a = ft_find_next_top_a(stack);
@@ -75,8 +71,10 @@ void ft_stb_maj_sta_1(t_stack *stack, int half_currrent_a)
     else
     {
         while (stack->index_maxa != stack->current_a - 1)
+        {
             ra(stack);
-        ft_find_maxmin_a(stack);
+            ft_find_maxmin_a(stack);
+        }
     }
 }
 void ft_stb_maj_sta_2(t_stack *stack, int half_current_a, int index_top_a, int i)

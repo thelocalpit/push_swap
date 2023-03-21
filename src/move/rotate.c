@@ -6,18 +6,11 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:47:20 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/15 18:09:58 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 01:23:18 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-/*  in questa funzione faremo il rotate. ovvero il primo elemento
-    andrà all'ultimo posto. per fare questo dobbiamo
-    1.  utilizzare un tmp dove ci salviamo il valore del primo elemento.
-    2.  spostiamo tutti gli elementi in alto di 1.
-    3.  mettiamo il tmp in posizione [current_a - 1]
-     */
 
 int ra(t_stack *stack)
 {

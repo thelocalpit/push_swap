@@ -6,23 +6,19 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:02:56 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/17 15:21:09 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 01:52:49 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/* in questa funzione dobbiamo effettivamente fare i movimenti per pushare
-    in stack B. 
-    anche qua ci serviamo di due int che ci permettono di calcolare
-    la metà del current A-B
-     */
 void ft_realsort(t_stack *stack, t_topush topush)
 {
     int half_current_a;
     int half_current_b;
     int i;
 
+    // ft_find_maxmin_a(stack);
     i = -1;
     if ((stack->current_a % 2) != 0)
         half_current_a = stack->current_a / 2 + 1;
@@ -42,8 +38,7 @@ void ft_realsort(t_stack *stack, t_topush topush)
         ft_timetopush_mix_2(stack, topush, i);
     pb(stack);
 }
-/* questa funzione serve per effettuare le mosse per il caso in cui siano
-    tutti e due sopra gli elementi  */
+
 void ft_timetopush_firsthalf_b(t_stack *stack, t_topush topush, int i)
 {
     if (topush.index_a == topush.index_b)
@@ -102,6 +97,7 @@ void ft_timetopush_mix_1(t_stack *stack, t_topush topush, int i)
     while (++i < stack->current_b - topush.index_b)
         rrb(stack);
 }
+
 void ft_timetopush_mix_2(t_stack *stack, t_topush topush, int i)
 {
     while (++i < topush.index_b)

@@ -6,16 +6,11 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:47:22 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/15 18:10:09 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 01:23:24 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-/*  ok nello swap dobbiamo scambiare il primo con il secondo.
-    creeremo una funzione per a per b e per entrambi.
-    molto easy, utilizziamo un tmp per salvarci il valore da sostituire e via
-*/
 
 int sa(t_stack *stack)
 {

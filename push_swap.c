@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:11 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/17 18:02:07 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/21 01:26:18 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,13 @@ int	main(int ac, char **av)
 	t_topush	topush;
 	int			i;
 	int			j;
-	// int			len;
-	
-	// len = 0;
+
 	if (ac == 1)
 		exit(0);
 	stack = ft_init(av, ac);
-	/* len +=  */ft_sorting(stack);
+	ft_sorting(stack);
     j = stack->current_a;
     i = -1;
-    /* le condizioni del while le facciamo con j - 3 perchè 3 elementi sono 
-        facilmente ordinabili nello stack A e risparmiamo mosse piuttosto
-        che a portarli nello stack B */
     while(++i < j - 3)
     {
         topush = ft_count_moves(stack);
@@ -47,8 +42,5 @@ int	main(int ac, char **av)
     while (++j < i)
 		ft_pushing_to_a(stack);
 	final_sorting(stack);
-    i = -1;
-    while (++i < stack->current_a)
-        printf("%i\n", stack->stack_a[i]);
     ft_close(stack);
 }
