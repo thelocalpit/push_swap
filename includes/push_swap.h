@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 15:11:39 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:39:57 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-
-enum e_MOVES {
-	swap_a = 0,
-	swap_b,
-	swap_ab,
-	push_a,
-	push_b,
-	rotate_a,
-	rotate_b,
-	rotate_ab,
-	reverse_a,
-	reverse_b,
-	reverse_ab,
-};
 
 typedef struct s_topush {
 	int				count_moves;
