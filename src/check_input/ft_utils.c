@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 12:28:22 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 15:13:48 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:56:43 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_atoi(const char *str, t_stack *stack)
 	int	i;
 	int	res;
 
+	stack->moves = 0;
 	i = 0;
 	s = 1;
 	res = 0;

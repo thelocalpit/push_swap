@@ -6,7 +6,7 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:40:07 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/22 15:39:57 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:33:20 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,22 @@ typedef struct s_check {
 }				t_check;
 
 /* swap function */
-int			sa(t_stack *stack, int k);
-int			sb(t_stack *stack, int k);
-int			ss(t_stack *stack, int k);
+void		sa(t_stack *stack, int k);
+void		sb(t_stack *stack, int k);
+void		ss(t_stack *stack, int k);
 
 /* push function */
-int			pa(t_stack *stack, int k);
-int			pb(t_stack *stack, int k);
+void		pa(t_stack *stack, int k);
+void		pb(t_stack *stack, int k);
 /* rotate funciton */
-int			ra(t_stack *stack, int k);
-int			rb(t_stack *stack, int k);
-int			rr(t_stack *stack, int k);
+void		ra(t_stack *stack, int k);
+void		rb(t_stack *stack, int k);
+void		rr(t_stack *stack, int k);
 
 /* reverse rotate function */
-int			rra(t_stack *stack, int k);
-int			rrb(t_stack *stack, int k);
-int			rrr(t_stack *stack, int k);
+void		rra(t_stack *stack, int k);
+void		rrb(t_stack *stack, int k);
+void		rrr(t_stack *stack, int k);
 
 /* check and fill stack a */
 t_stack		*ft_init(char **av, int ac, int k);

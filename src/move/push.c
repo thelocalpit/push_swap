@@ -6,13 +6,13 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:55:43 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 15:16:05 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:35:11 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	pb(t_stack *stack, int k)
+void	pb(t_stack *stack, int k)
 {
 	int	i;
 
@@ -34,10 +34,9 @@ int	pb(t_stack *stack, int k)
 	ft_check_maxmin(stack);
 	if (k == 1)
 		ft_printf("pb\n");
-	return (push_b);
 }
 
-int	pa(t_stack *stack, int k)
+void	pa(t_stack *stack, int k)
 {
 	int	i;
 
@@ -58,5 +57,4 @@ int	pa(t_stack *stack, int k)
 	stack->current_b--;
 	if (k == 1)
 		ft_printf("pa\n");
-	return (push_a);
 }

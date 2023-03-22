@@ -6,13 +6,13 @@
 /*   By: pfalasch <pfalasch@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:47:20 by pfalasch          #+#    #+#             */
-/*   Updated: 2023/03/21 15:16:29 by pfalasch         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:36:06 by pfalasch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ra(t_stack *stack, int k)
+void	ra(t_stack *stack, int k)
 {
 	int	i;
 	int	tmp;
@@ -28,10 +28,9 @@ int	ra(t_stack *stack, int k)
 	ft_check_maxmin(stack);
 	if (k == 1)
 		ft_printf("ra\n");
-	return (rotate_a);
 }
 
-int	rb(t_stack *stack, int k)
+void	rb(t_stack *stack, int k)
 {
 	int	i;
 	int	tmp;
@@ -47,10 +46,9 @@ int	rb(t_stack *stack, int k)
 	ft_check_maxmin(stack);
 	if (k == 1)
 		ft_printf("rb\n");
-	return (rotate_b);
 }
 
-int	rr(t_stack *stack, int k)
+void	rr(t_stack *stack, int k)
 {
 	int	i;
 	int	tmp;
@@ -74,5 +72,4 @@ int	rr(t_stack *stack, int k)
 	ft_check_maxmin(stack);
 	if (k == 1)
 		ft_printf("rr\n");
-	return (rotate_ab);
 }
